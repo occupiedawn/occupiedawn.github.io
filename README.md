@@ -1,4 +1,4 @@
 occupiedawn.github.io
-=====================
+==================
 
-A website of civic forum for Occupiedawn in NCTU
+A website for civic forum in NCTU

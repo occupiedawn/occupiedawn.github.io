@@ -1,0 +1,138 @@
+<html>
+
+
+	<head>
+	
+		<link href="default.css" rel="stylesheet" type ="text/css" media="screen"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+		<title>交大天光</title>
+		
+        <script src="jquery-1.11.0.min.js"></script>
+ 		<script type="text/javascript">
+		$(function()
+		{
+			// 先取得必要的元素並用 jQuery 包裝
+			// 再來取得 $block 的高度及設定動畫時間
+			var $block = $('#abgneBlock'),
+				$slides = $('ul.list', $block),
+				_width = $block.width(),
+				$li = $('li', $slides),
+				_animateSpeed = 600,
+				
+			// 加入計時器, 輪播時間及控制開關
+			timer, _showSpeed = 6000, _stop = false;
+		
+			// 產生 li 選項
+			var _str = '';
+			for(var i=0, j=$li.length;i<j;i++){
+				// 每一個 li 都有自己的 className = playerControl_號碼
+				_str += '<li class="playerControl_' + (i+1) + '"></li>';
+			}
+			
+			// 產生 ul 並把 li 選項加到其中
+			// 並幫 li 加上 mouseover 事件
+			var $playerControl =  $('<ul id="b" class="playerControl"></ul>').html(_str).appendTo($slides.parent()) ;
+			
+			var $playerControlLi = $playerControl.find('li').mouseover(function(){
+		
+				var $this = $(this);
+				$this.addClass('current').siblings('.current').removeClass('current');
+				
+				clearTimeout(timer);
+				
+				// 移動位置到相對應的號碼
+				$slides.stop().animate({
+					left: $block.width() * $this.index() * -1
+				}, _animateSpeed, function(){
+												// 當廣告移動到正確位置後, 依判斷來啟動計時器
+												if(!_stop) timer = setTimeout(move, _showSpeed);});
+				
+				switch($this.index())
+				{
+					case 0: 
+						{	
+							$('#text2').find('h1').html('主講日期 2014.4.24');
+							$('#text').find('h1').html('黃國昌：');
+							$('#text').find('p').html('我們的行動不會因接下來的司法程序而中斷，「轉守為攻、出關播種」絕非只是離開議場時的口號，而是繼續與人民攜手努力奪回國家的莊嚴承諾。'); 
+							break;
+						}
+					case 1: 
+						{ 	
+							$('#text2').find('h1').html('主講日期 2014.4.24');
+							$('#text').find('h1').html('邱文聰：');
+							$('#text').find('p').html('造成這次服貿爭議的原因，在於政府黑箱，又希望人民照單接受，如果今天要來擬定一個可以監督這樣的法案的條例，這就是我們所秉持的。');
+							break;
+						}
+					case 2: 
+						{ 	
+							$('#text2').find('h1').html('主持人');
+							$('#text').find('h1').html('林秀幸：');
+							$('#text').find('p').html('經過三一八學運，台灣社會有如經歷一次八級地震，將徹底改變台灣的意義、政治和社會的地貌。');
+							break;
+						}
+					default: {break;}
+				}
+				
+				
+ 
+				return false;
+																				});
+																				
+			$playerControlLi.eq(0).mouseover();
+			
+			// 如果滑鼠移入 $block 時
+			$block.hover(function(){
+					// 關閉開關及計時器
+					_stop = true;
+					clearTimeout(timer);
+			}, function(){
+					// 如果滑鼠移出 $block 時
+					// 開啟開關及計時器
+					_stop = false;
+					timer = setTimeout(move, _showSpeed);
+						});
+ 
+			// 計時器使用
+			function move(){
+					var _index = $('.current').index();
+					$playerControlLi.eq((_index + 1) % $playerControlLi.length).mouseover();}
+
+			var ref = "";
+			
+			function consoleInfo()
+			{
+				$(".a").css("width", $block.width());				
+			}
+
+			ref = setInterval(function(){consoleInfo();},500);
+
+		});
+		</script>
+
+	</head>
+	
+	<body>
+		
+			<div id="text">
+				<h1>黃國昌：</h1>
+				<p>我們的行動不會因接下來的司法程序而中斷，「轉守為攻、出關播種」絕非只是離開議場時的口號，而是繼續與人民攜手努力奪回國家的莊嚴承諾。</p>
+			
+			</div>
+	
+	
+	
+	        <div id="abgneBlock">
+			<ul class="list">
+				<li class = "a"><a target="_blank" href="#"><img src="images/00.gif"></a></li>
+				<li class = "a"><a target="_blank" href="#"><img src="images/01.jpg"></a></li>
+				<li class = "a"><a target="_blank" href="#"><img src="images/02.gif"></a></li>
+			</ul>
+			</div>	
+		
+			<div id="text2">
+				<h1>主講日期 2014.4.24</h1>
+			</div>
+		
+	</body>
+</html>

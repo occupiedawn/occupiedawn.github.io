@@ -1,0 +1,303 @@
+.top {
+	margin:0;
+	padding:0;
+	height: 10%;
+	width:60%;
+ 	text-align: left;
+}
+
+.top img {
+	display:inline-block;
+	float:left;
+	height: 100%;
+}
+
+.inside
+{
+	margin: 0;
+	padding: 0;
+	border-width:0;
+}
+		
+body {
+	margin:0;
+	text-align: center;
+	background-color: #efdfbb;	
+	
+}
+
+a {
+	color: #805b2b;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+
+/* bottom */
+
+.bottom {
+	height: 10%;
+}
+		
+.bottom ul {
+	height: 100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:#805b2b; 	
+	background: url(icons/buttom.jpg) no-repeat; 
+	background-size:100% 100%; 	
+}
+		
+.bottom ul li {
+	display:block;
+	color:#FFFFFF;
+	padding:10px;
+	text-decoration:none;
+}
+
+.bottom a {
+	color: #efdfbb;
+}
+
+/* siteHeader */
+
+.siteHeader {
+	width:100%;
+	height:100%;
+	
+}
+.siteHeader ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	height: 50%;
+	
+	position: relative;
+	top:50%;
+}
+
+.siteHeader ul li {
+	display:block;
+	float:left;
+	width:25%;
+/*	background-color:#805b2b; */
+	text-align:center;		
+}
+
+.siteHeader ul li a{
+	display:block;
+	font-weight:bold;
+	color:#FFFFFF;
+	padding:10PX;
+	background: url(icons/button_01.jpg) no-repeat; 
+	background-size:100% 100%;	
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+.siteHeader ul li a:hover{
+/*	background-color:#bd9b51;	*/
+	background: url(icons/button_02.jpg) no-repeat 0 100%;	
+	background-size:100% 100%;
+}
+
+/* page */
+
+.page {
+	width: 70%;
+	margin: 0 auto;
+	padding: 3% 0 0 5%;
+	font-family: DFKai-sb;
+}
+
+/* content */
+.content {
+	float: left;
+	width: 50%; 
+	padding: 0 0 5% 5%;
+	text-align: left;
+}
+
+/* article */
+.article {
+	text-align: left;
+}
+
+.article img {
+	display:inline-block;
+	width: 70%;
+	padding: 1% 0 0 7%;
+}
+
+.info {
+	padding: 3% 0 0 0;
+}
+
+.info li {
+	padding: 0 0 0 15px;
+	background: url(icons/icon_03.gif) no-repeat left;	
+}
+
+.text {
+	padding: 1% 0 0 7%;
+
+}
+
+/* post */
+
+.post {
+	padding: 0 5% 5% 0;
+}
+
+.title {
+	margin: 0;
+	border-bottom: 2px solid #4A3903;
+	padding: 0 0 0 35px;
+	background: url(icons/icon_01.jpg) no-repeat left;
+}
+
+.abstract {
+	padding: 2% 0;
+}
+
+.subscript {
+	border-top: 1px solid #4A3903;
+	text-align: right;
+	color: #646464;
+}
+
+/* sidebar */
+
+.sidebar {
+	float: right;
+	width: 25%;
+	padding: 0 15% 0 0;
+	text-align: left;
+}
+
+.sidebar h2 {
+	margin: 0;
+	border-bottom: 2px solid #4A3903;
+	padding: 0 0 0 32px;
+	background: url(icons/icon_02.jpg) no-repeat left;
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 3% 0 0 5%;
+}
+
+.sidebar li {
+	padding: 0 0 1% 15px;
+	background: url(icons/icon_01.gif) no-repeat left;
+}
+	
+.sidebar a {
+	text-decoration: none;
+}	
+
+.sidebar a:hover {
+	text-decoration: underline;
+}
+
+/* abgneBlock */
+
+#abgneBlock {
+
+	margin:0;
+	padding:0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	display:inline-block;
+}
+
+#abgneBlock ul.list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	position: absolute;
+	width: 9999PX;
+	height: 100%;
+}
+
+#abgneBlock ul.list li {
+	float: left;
+	height: 100%;
+}
+
+#abgneBlock .list img{
+	width: auto;
+	height: 100%;
+	border: 0;
+}
+#abgneBlock ul.playerControl {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position:relative; 
+	top:90%;
+	display:inline-block;
+}
+#abgneBlock ul.playerControl li {
+	float: left;
+	width: 23px;
+	height: 14px;
+	cursor: pointer;
+	margin: 0px 2px;
+	background: #bebebe;
+}
+#abgneBlock ul.playerControl li.current { 
+	background: #cc0000;
+}
+
+hr {
+	margin: 0;
+	padding: 0;
+	height:0.5%;
+	border-width:0;
+	color:gray;
+	background-color:#bd9b51;
+}
+
+#content img { 
+    max-width: 50px;
+    width: 100%;
+    height: auto;
+}
+
+#text {
+	text-align: left;
+	z-index:1;
+	position:absolute;
+	top:0;
+	left:0;
+	width: 20%;
+	height: 40%;
+	padding: 5% 0 0 5%;
+	font-family: DFKai-sb;
+	font-style:italic;
+}
+#text p
+{
+	text-indent: 10%;
+}
+#text2 
+{
+	text-align: left;
+	z-index:2;
+	position:absolute;
+	top:85%;
+	right:0;
+	padding: 0 5% 0 0;
+}
